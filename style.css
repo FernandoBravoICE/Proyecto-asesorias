@@ -1,23 +1,24 @@
 /* =========================================================
 VARIABLES
-   ========================================================= */
+========================================================= */
 :root {
-    --blanco:       #ffffff;
-    --negro:        #0a0a0a;
-    --amarillo:     #ffcc00;
-    --amarillo2:    #ff9900;
-    --cyan:         #0097a7;
-    --cyan-dark:    #006978;
-    --gris:         rgba(255,255,255,.45);
-    --gris-borde:   rgba(255,255,255,.08);
+    --blanco: #ffffff;
+    --negro: #0a0a0a;
+    --amarillo: #ffcc00;
+    --amarillo2: #ff9900;
+    --cyan: #0097a7;
+    --cyan-dark: #006978;
+    --gris: rgba(255,255,255,.45);
+    --gris-borde: rgba(255,255,255,.08);
 
-    --grad-oro:     linear-gradient(90deg, #ffcc00, #ff9900);
-    --grad-hero:    linear-gradient(135deg, #0a0a0a 0%, #0d2b35 50%, #003d4d 100%);
-    --grad-card:    linear-gradient(145deg, #111 0%, #1a2a30 100%);
-    --grad-cyan:    linear-gradient(90deg, #0097a7, #00bcd4);
 
-    --sombra:       0 20px 60px rgba(0,0,0,.35);
-    --radio:        1.2rem;
+    
+    --grad-oro: linear-gradient(90deg, #ffcc00, #ff9900);
+    --grad-hero: linear-gradient(135deg, #0a0a0a 0%, #0d2b35 50%, #003d4d 100%);
+    --grad-card: linear-gradient(145deg, #111 0%, #1a2a30 100%);
+
+    --sombra: 0 20px 60px rgba(35, 35, 35, 0.521);
+    --radio: 1.2rem;
 
     --fuente-titulo: "Syne", sans-serif;
     --fuente-cuerpo: "Noto Sans", sans-serif;
@@ -25,10 +26,15 @@ VARIABLES
 
 /* =========================================================
 BASE
-   ========================================================= */
+========================================================= */
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
@@ -40,48 +46,51 @@ body {
 }
 
 /* =========================================================
-UTILIDADES
-   ================================================
-
-/* =========================================================
-   HEADER
-   ========================================================= */
+HEADER
+========================================================= */
 header {
-    position: sticky;
+    text-align: center;
+    padding: 2rem;
+    /*position: sticky;
     top: 0;
     padding: 2rem 4rem;
     display: flex;
-    align-items: start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;*/
     background: rgba(10,10,10,.92);
     border-bottom: 1px solid rgba(255,204,0,.12);
-    /*backdrop-filter: blur(12px);*/
 }
 
 header h1.titulo {
-    font-size: 2rem;
-    text-align: left;
-    margin: 0;
-    letter-spacing: -.02em;
+    font-family: var(--fuente-titulo);
+    font-size: 3rem;
+    text-align: center;
+    background: var(--grad-oro);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+
+/* NAV */
 .navegacion_p {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: var(--gris);
+    
 }
 
 .navegacion_p a {
-    color: var(--gris);
+    color: var(--blanco);
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: .05em;
     text-transform: uppercase;
     padding: .8rem 1.6rem;
     border-radius: .6rem;
-    /*transition: color .2s, background .2s;*/
+    transition: all .2s ease;
 }
 
 .navegacion_p a:hover {
@@ -90,366 +99,218 @@ header h1.titulo {
 }
 
 /* =========================================================
-   HERO
-   ========================================================= */
+HERO
+========================================================= */
 .hero {
-    background-image:url(banner.jpg);
+    background-image: url(banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    position:relative;
-    min-height: 500%;
+    background-position: center;
+    min-height: 100vh;
+
     display: grid;
     place-items: center;
     text-align: center;
     padding: 6rem 2rem;
-    
-    
 }
-/*
-/* Esferas de luz de fondo */
-/*
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 70rem; height: 70rem;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,151,167,.18) 0%, transparent 70%);
-    top: -15%; left: -10%;
-    pointer-events: none;
-}*/
-/*
-.hero::after {
-    content: '';
-    position: absolute;
-    width: 55rem; height: 55rem;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,204,0,.10) 0%, transparent 70%);
-    bottom: -10%; right: -8%;
-    pointer-events: none;
-}
-*/
-/*
-.hero-inner {
-    position: relative;
-    z-index: 2;
-}
-*/
+
 .hero .titulo {
-    font-size: clamp(4.5rem, 8em, 9rem);
-    margin-bottom: 1.5rem;
-}
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-family: var(--fuente-cuerpo);
+    text-align: center;
 
-.hero p {
-    font-size: 1.8rem;
-    color: rgba(255,255,255,.5);
-    margin-bottom: 3.5rem;
 }
-
-.hero p span {
-    color: var(--cyan);
-    font-weight: 700;
-}
-
-/* SVG decorativo del hero */
-.hero svg {
+.span {
     display: block;
-    margin: 0 auto 2rem;
+    font-size: 2rem;
+    color: var(--cyan);
+}
+.hero svg {
+    margin: 2rem auto;
     opacity: .7;
 }
 
-/* Botón CTA del hero */
-
-
-.hero-content {
-    display: inline-flex;
-    align-items: center;
-    gap: .8rem;
-    padding: 1.4rem 3.2rem;
+/* BOTÓN */
+.boton {
+    display: inline-block;
+    padding: 1.4rem 3rem;
     background: var(--grad-oro);
     color: var(--negro);
     font-family: var(--fuente-titulo);
     font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: .06em;
     text-decoration: none;
     border-radius: .8rem;
-    /*transition: transform .2s, box-shadow .2s;
-    box-shadow: 0 8px 28px rgba(255,204,0,.25);*/
-}
-
-/*
-.hero-content:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(255,204,0,.4);
-}
-*/
-
-/* =========================================================
-   BARRA DE UBICACIÓN
-   ========================================================= */
-.loc-bar {
-    padding: 1.4rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background: rgba(0,151,167,.07);
-    border-top:    1px solid rgba(0,151,167,.2);
-    border-bottom: 1px solid rgba(0,151,167,.2);
-}
-
-.loc-bar p {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--cyan);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-/* =========================================================
-   SECCIONES GENERALES
-   ========================================================= */
-section {
-    padding: 8rem 2rem;
-}
-
-section h2.titulo {
-    margin-bottom: 1.5rem;
-}
-/*
-section > p {
-    font-size: 1.6rem;
-    color: var(--gris);
     text-align: center;
-    line-height: 1.7;
-}
-*/
-/* =========================================================
-   MAIN — SERVICIOS (cards)
-   ========================================================= */
-main {
-    padding: 8rem 2rem;
-}
-
-main h2 {
-    font-family: var(--fuente-titulo);
-    font-size: 4rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 5rem;
-    background: var(--grad-oro);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    width: 100%;
-}
-
-/*
-.servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-    gap: 2.5rem;
-    max-width: 120rem;
-    margin: 0 auto 6rem;
-}*/
-
-/* Cada sección dentro de main = card */
-/*
-main > section {
-    background: var(--grad-card);
-    border: 1px solid var(--gris-borde);
-    border-radius: var(--radio);
-    padding: 3.5rem 3rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform .3s, border-color .3s, box-shadow .3s;
-}*/
-/*
-main > section::before {
-    content: '';
-    position: absolute; inset: 0; opacity: 0;
-    background: radial-gradient(circle at 30% 0%, rgba(255,204,0,.07) 0%, transparent 70%);
-    transition: opacity .3s;
-}
-
-main > section:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255,204,0,.28);
-    box-shadow: var(--sombra);
-}
-
-main > section:hover::before {
-    opacity: 1;
-}
-
-main > section h3 {
-    font-family: var(--fuente-titulo);
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--blanco);
-    margin: 1.8rem 0 1rem;
-}
-
-main > section p {
-    font-size: 1.5rem;
-    color: var(--gris);
-    line-height: 1.7;
-}
-
-main > section svg {
-    display: block;
-}
-*/
-/* =========================================================
-CONTACTO
-   ========================================================= */
-#Contacto {
-    background: transparent;
-    padding: 8rem 2rem;
-    max-width: 80rem;
-    margin: 0 auto;
-}
-
-#Contacto h2 {
-    font-family: var(--fuente-titulo);
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 3rem;
-    text-align: center;
-    background: var(--grad-oro);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-fieldset {
-    border: 1px solid var(--gris-borde);
-    border-radius: var(--radio);
-    padding: 3rem;
-    background: var(--grad-card);
-}
-
-legend {
-    font-size: 1.3rem;
-    color: rgba(255,255,255,.3);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 0 .8rem;
-}
-
-fieldset div {
-    display: flex;
-    flex-direction: column;
-    gap: .6rem;
-    margin-bottom: 2rem;
-}
-
-fieldset label {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: rgba(255,255,255,.5);
-    letter-spacing: .05em;
-    text-transform: uppercase;
-}
-
-fieldset input[type="text"],
-fieldset input[type="email"],
-fieldset input[type="tel"],
-fieldset textarea {
-    background: rgba(255,255,255,.04);
-    border: 1.5px solid rgba(255,255,255,.1);
-    border-radius: .8rem;
-    padding: 1.2rem 1.6rem;
-    color: var(--blanco);
-    font-family: inherit;
-    font-size: 1.5rem;
-    /*transition: border-color .2s, background .2s;*/
-    width: 100%;
-}
-/*
-fieldset input[type="text"]:focus,
-fieldset input[type="email"]:focus,
-fieldset input[type="tel"]:focus,
-fieldset textarea:focus {
-    outline: none;
-    border-color: var(--amarillo);
-    background: rgba(255,204,0,.04);
-}
-
-fieldset textarea {
-    resize: vertical;
-    min-height: 13rem;
-}
-
-fieldset input[type="submit"] {
-    background: var(--grad-oro);
-    color: var(--negro);
     border: none;
     cursor: pointer;
-    font-family: var(--fuente-titulo);
-    font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: .07em;
-    padding: 1.5rem;
-    border-radius: .8rem;
-    transition: transform .2s, box-shadow .2s;
-    width: 100%;
-    margin-top: .5rem;
+    transition: all .2s ease;
 }
 
-fieldset input[type="submit"]:hover {
+.boton:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255,204,0,.3);
 }
-    */
+
+/* =========================================================
+UBICACIÓN
+========================================================= */
+.loc-bar {
+    padding: 1.4rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(0,151,167,.07);
+}
+
+.loc-bar p {
+    font-weight: 700;
+    color: var(--cyan);
+}
+
+/* =========================================================
+SECCIONES
+========================================================= */
+section {
+    padding: 6rem 2rem;
+}
+main {
+    max-width: 110rem;
+    margin: 4rem auto;
+    background: rgba(255,255,255,.04);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 5rem 2rem;
+    border: 1px solid var(--gris-borde);
+}
+
+main h2 {
+    text-align: center;
+    font-size: 4rem;
+    background: var(--grad-oro);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.icono {
+    width: 8rem;
+    height: 8rem;
+    background: var(--grad-card);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+
+/* CONTENEDOR NUEVO */
+.contenedor{
+    max-width:100rem;
+    margin: 0 auto;
+
+}
+#Misservicios .contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#Misservicios .contenedor section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+}
+/* =========================================================
+FORMULARIO
+========================================================= */
+.formulario {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.contenedor-campos {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CAMPOS */
+.campo {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.6);
+    margin-bottom: .5rem;
+}
+
+/* INPUTS */
+.input-text {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: .6rem;
+    border: 1px solid rgba(255,255,255,.1);
+    background: rgba(255,255,255,.05);
+    color: var(--blanco);
+}
+
+/* FOCUS (IMPORTANTE) */
+.input-text:focus {
+    outline: none;
+    border-color: var(--amarillo);
+}
+
+/* FIELDSET */
+fieldset {
+    border: 1px solid var(--gris-borde);
+    padding: 2rem;
+    border-radius: var(--radio);
+    background: rgba(255,255,255,.05);
+}
+
+/* LEGEND */
+legend {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--amarillo);
+    margin-bottom: 2rem;
+}
 
 /* =========================================================
 TÉRMINOS
-   ========================================================= */
+========================================================= */
 .terminos {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 2rem 3rem;
+    margin-top: 2rem;
+    text-align: center;
 }
 
 .terminos label {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.4rem;
-    color: rgba(255,255,255,.3);
-    cursor: pointer;
-}
-
-.terminos input[type="checkbox"] {
-    accent-color: var(--amarillo);
-    width: 1.6rem;
-    height: 1.6rem;
-    cursor: pointer;
+    font-size: 1.3rem;
+    color: rgba(255,255,255,.4);
 }
 
 /* =========================================================
-FOTO
-   ========================================================= */
+IMAGEN
+========================================================= */
 .foto-seccion {
     display: flex;
     justify-content: center;
-    padding: 4rem 2rem;
+    padding: 4rem;
 }
 
 .foto-seccion img {
-    max-width: 36rem;
-    border-radius: 1.6rem;
-    border: 2px solid rgba(255,204,0,.2);
-    box-shadow: 0 0 0 1px rgba(255,204,0,.05), var(--sombra);
-    display: block;
+    max-width: 30rem;
+    border-radius: 1rem;
+    box-shadow: var(--sombra);
 }
 
 /* =========================================================
@@ -460,17 +321,14 @@ DIVISOR
     margin: 0 4rem;
     background: linear-gradient(to right, transparent, rgba(255,255,255,.07), transparent);
 }
-
 /* =========================================================
 FOOTER
-   ========================================================= */
+========================================================= */
 footer {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 3rem;
     font-size: 1.3rem;
-    color: rgba(255,255,255,.2);
-    letter-spacing: .05em;
-    border-top: 1px solid rgba(255,255,255,.06);
+    color: rgba(255,255,255,.3);
 }
 
 footer span {
@@ -479,32 +337,18 @@ footer span {
 
 /* =========================================================
 RESPONSIVE
-   ========================================================= */
+========================================================= */
+@media (min-width: 768px) {
 
 
-@media (min-width: 480px) {
-    header {
-        flex-direction: row;
+    #Misservicios .contenedor{
+        grid-template-columns: repeat(3,1fr);
     }
-
-    .hero .titulo {
-        font-size: 4rem;
-    }
-}
-
-@media (min-width: 900px) {
     .navegacion_p {
         flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .hero .titulo {
-        font-size: 5rem;
-    }
-}
-
-@media (min-width: 1140px) {
-    .contenedor {
-        padding: 0;
+        justify-content: space-around;
+        padding: 1.2rem;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        border-radius: 0;
     }
 }
