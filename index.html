@@ -6,6 +6,7 @@
     <title>Desarrollo web Fernando Jesus</title>
 
     <!-- Normalize primero -->
+    <link rel="preload" href="normalize2.css" as="style">
     <link rel="stylesheet" href="normalize2.css">
 
     <!-- Google Fonts -->
@@ -22,45 +23,57 @@
 
     <!-- HEADER -->
     <header>
-        <h1 class="titulo">Fernando Bravo <span>Asesorias</span></h1>
+        <h1 class="titulo">Bravo´s <span>Consulting</span></h1>
 
-        <nav class="navegacion_p contenedor">
+    </header>
+    <nav class="navegacion_p">
             <a href="#Inicio">Inicio</a>
             <a href="nosotros.html">About us</a>
             <a href="#Misservicios">Services</a>
             <a href="#Contacto">Contacto</a>
             <a href="#Contacto">LinkedIn</a>
-        </nav>
-    </header>
+        
+    </nav>
+    
 
     <!-- HERO -->
     <section class="hero" id="Inicio">
         <div class="hero-inner">
-            <h2 class="titulo">Asesorias Academicas     <span>Fernando Bravo </span></h2>
-
-            <svg
+            <h2 class="titulo">Asesorias Academicas <span class="span">Fernando Bravo</span></h2>
+            <div>
+                
+                <!--
+                category: Map
+                tags: [students, class, teachers, professors, doctors, hall, classroom, subject, science, break, lesson]
+                version: "1.22"
+                unicode: "ecf7"
+                -->
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="48" height="48"
+                width="48"
+                height="48"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#ffcc00"
-                stroke-width="1"
+                stroke-width="1.25"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-            >
-                <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
-                <path d="M4 13h3l3 3h4l3 -3h3" />
-            </svg>
+                >
+                <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                </svg>
 
-            <a href="#Contacto" class="hero-content">Contactar</a>
+            </div>
+            <a href="#Contacto" class="boton">Contactar</a>
         </div>
     </section>
 
     <!-- UBICACIÓN -->
-    <div class="loc-bar">
+    <div class="loc-bar" >
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18" height="18"
+            width="36"
+            height="48"
             viewBox="0 0 24 24"
             fill="none"
             stroke="#ffcc00"
@@ -76,165 +89,159 @@
 
     <!-- SERVICIOS -->
     <main id="Misservicios">
-
+        <div class="divisor"></div>
         <h2>Mis servicios</h2>
+        <div class="divisor"></div>
 
         <div class="contenedor">
 
             <section>
                 <h3>Asesoria Personalizada</h3>
-                <!--
-                tags: [school, classroom, education, learn]
-                category: Document
-                unicode: "f34d"
-                version: "1.88"
-                -->
-                <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#ffcc00"
-                stroke-width="1.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                >
-                <path d="M8 19h-3a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v11a1 1 0 0 1 -1 1" />
-                <path d="M11 16m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-            </svg>
-
+                <div class="icono">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#ffcc00"
+                        stroke-width="1.25"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M8 19h-3a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v11a1 1 0 0 1 -1 1" />
+                        <path d="M11 16m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                    </svg>
+                </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque laudantium tempora sit sequi, delectus autem ab suscipit modi illo perspiciatis cupiditate eaque quod corporis repellat laborum ut, quas, deserunt iure!</p>
             </section>
 
             <section>
                 <h3>Cursos</h3>
-                <!--
-                    category: Math
-                    tags: [linear, statyscics, graph]
-                    version: "1.39"
-                    unicode: "eeb2"
-                    -->
+                <div class="icono">
                     <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#ffcc00"
-                    stroke-width="1.25"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#ffcc00"
+                        stroke-width="1.25"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                     >
-                    <path d="M3 19a2 2 0 0 0 2 2c2 0 2 -4 3 -9s1 -9 3 -9a2 2 0 0 1 2 2" />
-                    <path d="M5 12h6" />
-                    <path d="M15 12l6 6" />
-                    <path d="M15 18l6 -6" />
-                </svg>
+                        <path d="M3 19a2 2 0 0 0 2 2c2 0 2 -4 3 -9s1 -9 3 -9a2 2 0 0 1 2 2" />
+                        <path d="M5 12h6" />
+                        <path d="M15 12l6 6" />
+                        <path d="M15 18l6 -6" />
+                    </svg>
 
-                <!--
-                category: Health
-                tags: [liquid, container, glass, chemistry, test, laboratory, experimental, beta]
-                version: "1.44"
-                unicode: "ef60"
-                -->
-                <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#ffcc00"
-                stroke-width="1.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                >
-                <path d="M6.1 15h11.8" />
-                <path d="M14 3v7.342a6 6 0 0 1 1.318 10.658h-6.635a6 6 0 0 1 1.317 -10.66v-7.34h4z" />
-                <path d="M9 3h6" />
-                </svg>
-
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#ffcc00"
+                        stroke-width="1.25"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M6.1 15h11.8" />
+                        <path d="M14 3v7.342a6 6 0 0 1 1.318 10.658h-6.635a6 6 0 0 1 1.317 -10.66v-7.34h4z" />
+                        <path d="M9 3h6" />
+                    </svg>
+                </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nisi quibusdam aliquam necessitatibus nemo consequatur? Harum doloribus sapiente odit qui earum rem repudiandae. Nisi qui distinctio cumque vitae libero officia?</p>
             </section>
 
             <section>
                 <h3>Regularización</h3>
-                <!--
-                tags: [mind, human, iq, inteligence, organ]
-                unicode: "f59f"
-                version: "1.110"
-                -->
-                <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#ffcc00"
-                stroke-width="1.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                >
-                <path d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8" />
-                <path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8" />
-                <path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5" />
-                <path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0" />
-                <path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5" />
-                <path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" />
-                </svg>
+                    <div class="icono">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="48"
+                            height="48"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#ffcc00"
+                            stroke-width="1.25"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8" />
+                            <path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8" />
+                            <path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5" />
+                            <path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0" />
+                            <path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5" />
+                            <path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" />
+                        </svg>
+                    </div>
 
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab recusandae, quis iste, cupiditate, molestiae odit assumenda ratione mollitia hic repellat. Dicta harum numquam atque pariatur laudantium fugit dolores. Dolorem?</p>
             </section>
 
-        </div><!-- /.servicios-grid -->
+        </div>
 
         <!-- CONTACTO -->
         <section id="Contacto">
+            <div class="divisor"></div>
             <h2 class="titulo">Contacto</h2>
+            <div class="divisor"></div>
 
-            <form>
+            <h4>
+
+
+            </h4>
+
+            <form class="formulario" action="#" method="POST">
                 <fieldset>
                     <legend>Contáctanos llenando todos los campos</legend>
 
-                    <div>
-                        <label for="nombre">Nombre:</label>
-                        <input id="nombre" type="text" placeholder="Ingresa aquí tu nombre">
-                    </div>
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            <label for="nombre">Nombre:</label>
+                            <input class="input-text" id="nombre" name="nombre" type="text" placeholder="Ingresa aquí tu nombre" required>
+                        </div>
 
-                    <div>
-                        <label for="correo">Correo:</label>
-                        <input id="correo" type="email" placeholder="Ingresa aquí tu correo">
-                    </div>
+                        <div class="campo">
+                            <label for="correo">Correo:</label>
+                            <input class="input-text" id="correo" name="correo" type="email" placeholder="Ingresa aquí tu correo" required>
+                        </div>
 
-                    <div>
-                        <label for="tel">Teléfono:</label>
-                        <input id="tel" type="tel" placeholder="Ingresa aquí tu teléfono">
-                    </div>
+                        <div class="campo">
+                            <label for="tel">Teléfono:</label>
+                            <input class="input-text" id="tel" name="tel" type="tel" placeholder="Ingresa aquí tu teléfono">
+                        </div>
 
-                    <div>
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" placeholder="Deja aquí tu mensaje"></textarea>
-                    </div>
+                        <div class="campo">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea class="input-text" id="mensaje" name="mensaje" placeholder="Deja aquí tu mensaje" required></textarea>
+                        </div>
 
-                    <input type="submit" value="ENVIAR">
+                        
+                        <div class="terminos">
+                            
+                        <label>
+                            <input type="checkbox" name="terminos" required>
+                            Acepto términos y condiciones del servicio.
+                        </label>
+
+                        </div>
+                        <h3>
+
+                        </h3>
+                        <input class="boton" type="submit" value="ENVIAR">
+                    </div>
+                    
                 </fieldset>
+
+                
+
             </form>
         </section>
 
     </main>
-
-    <!-- TÉRMINOS -->
-    <div class="terminos">
-        <label>
-            <input type="checkbox">
-            Acepto términos y condiciones del servicio.
-        </label>
-    </div>
-
-    <!-- FOTO -->
-    <div class="foto-seccion">
-        <img src="test_png.png" alt="Imagen de perfil – Fernando Jesus Bravo">
-    </div>
 
     <div class="divisor"></div>
 
