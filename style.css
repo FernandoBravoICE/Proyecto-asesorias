@@ -62,7 +62,11 @@ COMPONENTES ESPECÍFICOS
 }
 
 .nav-custom {
-    background-color: rgba(255,255,255,.45);
+    background: rgba(10, 10, 10, 0.8) !important; /* Fondo oscuro semi-transparente */
+    backdrop-filter: blur(15px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 204, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .nav-custom .nav-link {
@@ -141,4 +145,113 @@ COMPONENTES ESPECÍFICOS
 
 .custom-input::placeholder {
     color: rgba(255,255,255,.4);
+}
+
+/* Ajustes para el Carrusel Slim */
+#FrasesCarrusel {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #0a0a0a, #111) !important;
+}
+
+#FrasesCarrusel .carousel-item {
+    transition: transform 1.2s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+/* Estilo del "Contador" (Indicadores) */
+#FrasesCarrusel .carousel-indicators {
+    bottom: 10px;
+}
+
+#FrasesCarrusel .carousel-indicators [button] {
+    width: 30px; /* Más anchos para facilitar el click */
+    height: 4px;
+    background-color: var(--amarillo);
+    border: none;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+#FrasesCarrusel .carousel-indicators .active {
+    opacity: 1;
+}
+
+/* Texto de impacto */
+.fw-700 {
+    font-weight: 700;
+}
+
+/* Estilo Base de la Card */
+.main-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+
+/* Manejo de Imágenes en Cards */
+.card-img-container {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.4);
+    transition: all 0.5s ease;
+}
+
+.main-card:hover .card-img-container img {
+    filter: grayscale(0%) brightness(0.7);
+    transform: scale(1.1);
+}
+
+/* Superposición de Gradiente */
+.img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(10,10,10,1), transparent);
+}
+
+/* Icono Flotante */
+.icon-floating {
+    width: 60px;
+    height: 60px;
+    background: var(--grad-card);
+    border: 2px solid var(--amarillo);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -45px;
+    position: relative;
+    z-index: 3;
+    transition: transform 0.3s ease;
+}
+
+.main-card:hover .icon-floating {
+    transform: rotateY(180deg);
+}
+
+/* Asegura opacidad total en los títulos de las cards */
+.main-card .card-title {
+    color: var(--blanco) !important; /* Color sólido */
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/*El título cambie a amarillo al pasar el mouse */
+.main-card:hover .card-title {
+    color: var(--amarillo) !important;
+    transition: color 0.3s ease;
 }
