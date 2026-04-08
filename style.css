@@ -1,354 +1,144 @@
 /* =========================================================
-VARIABLES
+VARIABLES Y CONFIGURACIÓN BASE
 ========================================================= */
 :root {
-    --blanco: #ffffff;
-    --negro: #0a0a0a;
     --amarillo: #ffcc00;
     --amarillo2: #ff9900;
     --cyan: #0097a7;
-    --cyan-dark: #006978;
-    --gris: rgba(255,255,255,.45);
-    --gris-borde: rgba(255,255,255,.08);
-
-
-    
+    --negro: #0a0a0a;
     --grad-oro: linear-gradient(90deg, #ffcc00, #ff9900);
-    --grad-hero: linear-gradient(135deg, #0a0a0a 0%, #0d2b35 50%, #003d4d 100%);
     --grad-card: linear-gradient(145deg, #111 0%, #1a2a30 100%);
-
     --sombra: 0 20px 60px rgba(35, 35, 35, 0.521);
-    --radio: 1.2rem;
-
-    --fuente-titulo: "Syne", sans-serif;
-    --fuente-cuerpo: "Noto Sans", sans-serif;
-}
-
-/* =========================================================
-BASE
-========================================================= */
-html {
-    font-size: 62.5%;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
 }
 
 body {
+    font-family: "Noto Sans", sans-serif;
     font-size: 1.6rem;
-    font-family: var(--fuente-cuerpo);
-    color: var(--blanco);
-    background: var(--negro);
-    overflow-x: hidden;
+}
+
+.titulo-syne {
+    font-family: "Syne", sans-serif;
+}
+
+.bg-custom-dark {
+    background-color: var(--negro) !important;
+}
+
+.text-cyan {
+    color: var(--cyan) !important;
 }
 
 /* =========================================================
-HEADER
+UTILERÍAS DE GRADIENTE Y BORDES
 ========================================================= */
-header {
-    text-align: center;
-    padding: 2rem;
-    /*position: sticky;
-    top: 0;
-    padding: 2rem 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;*/
+.text-gradient-gold {
+    background: var(--grad-oro);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.custom-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,.07), transparent);
+    border: none;
+    opacity: 1;
+}
+
+.border-custom {
+    border-color: rgba(255,255,255,.08) !important;
+}
+
+.bg-custom-light {
+    background: rgba(255,255,255,.05);
+}
+
+/* =========================================================
+COMPONENTES ESPECÍFICOS
+========================================================= */
+/* Header & Nav */
+.header-custom {
     background: rgba(10,10,10,.92);
     border-bottom: 1px solid rgba(255,204,0,.12);
 }
 
-header h1.titulo {
-    font-family: var(--fuente-titulo);
-    font-size: 3rem;
-    text-align: center;
-    background: var(--grad-oro);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.nav-custom {
+    background-color: rgba(255,255,255,.45);
 }
 
-
-/* NAV */
-.navegacion_p {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 2rem;
-    background-color: var(--gris);
-    
-}
-
-.navegacion_p a {
-    color: var(--blanco);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: .8rem 1.6rem;
-    border-radius: .6rem;
+.nav-custom .nav-link {
     transition: all .2s ease;
+    border-radius: .6rem;
 }
 
-.navegacion_p a:hover {
-    color: var(--amarillo);
+.nav-custom .nav-link:hover {
+    color: var(--amarillo) !important;
     background: rgba(255,204,0,.08);
 }
 
-/* =========================================================
-HERO
-========================================================= */
-.hero {
-    background-image: url(banner.jpg);
-    background-repeat: no-repeat;
+/* Hero Section */
+.hero-section {
+    background-image: url('https://cdn.muckrock.com/news_images/2016/02/08/FeynmanCov.jpg.2400x800_q85.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
-
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 6rem 2rem;
 }
 
-.hero .titulo {
-    font-size: clamp(4rem, 8vw, 8rem);
-    font-family: var(--fuente-cuerpo);
-    text-align: center;
-
-}
-.span {
-    display: block;
-    font-size: 2rem;
-    color: var(--cyan);
-}
-.hero svg {
-    margin: 2rem auto;
-    opacity: .7;
-}
-
-/* BOTÓN */
-.boton {
-    display: inline-block;
+/* Botones */
+.btn-custom {
     padding: 1.4rem 3rem;
     background: var(--grad-oro);
     color: var(--negro);
-    font-family: var(--fuente-titulo);
+    font-family: "Syne", sans-serif;
     font-weight: 800;
-    text-decoration: none;
     border-radius: .8rem;
-    text-align: center;
     border: none;
-    cursor: pointer;
     transition: all .2s ease;
 }
 
-.boton:hover {
+.btn-custom:hover, .btn-custom:focus {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255,204,0,.3);
+    color: var(--negro);
 }
 
-/* =========================================================
-UBICACIÓN
-========================================================= */
+/* Barra de Ubicación */
 .loc-bar {
-    padding: 1.4rem;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    gap: 1rem;
     background: rgba(0,151,167,.07);
 }
 
-.loc-bar p {
-    font-weight: 700;
-    color: var(--cyan);
-}
-
-/* =========================================================
-SECCIONES
-========================================================= */
-section {
-    padding: 6rem 2rem;
-}
-main {
-    max-width: 110rem;
-    margin: 4rem auto;
+/* Main Card Container */
+.main-card {
     background: rgba(255,255,255,.04);
-    border-radius: var(--radio);
+    border: 1px solid rgba(255,255,255,.08);
     box-shadow: var(--sombra);
-    padding: 5rem 2rem;
-    border: 1px solid var(--gris-borde);
+    max-width: 1100px;
 }
 
-main h2 {
-    text-align: center;
-    font-size: 4rem;
-    background: var(--grad-oro);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.icono {
+/* Iconos de Servicios */
+.icon-wrapper {
     width: 8rem;
     height: 8rem;
     background: var(--grad-card);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
 }
 
-
-/* CONTENEDOR NUEVO */
-.contenedor{
-    max-width:100rem;
-    margin: 0 auto;
-
-}
-#Misservicios .contenedor{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-#Misservicios .contenedor section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-
-}
-/* =========================================================
-FORMULARIO
-========================================================= */
-.formulario {
-    max-width: 60rem;
-    margin: 0 auto;
-}
-
-.contenedor-campos {
-    display: flex;
-    flex-direction: column;
-}
-
-/* CAMPOS */
-.campo {
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.campo label {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: rgba(255,255,255,.6);
-    margin-bottom: .5rem;
-}
-
-/* INPUTS */
-.input-text {
-    width: 100%;
-    padding: 1.2rem;
-    border-radius: .6rem;
-    border: 1px solid rgba(255,255,255,.1);
+/* Formulario Custom Inputs */
+.custom-input {
     background: rgba(255,255,255,.05);
-    color: var(--blanco);
+    border: 1px solid rgba(255,255,255,.1);
+    color: #fff;
+    padding: 1.2rem;
 }
 
-/* FOCUS (IMPORTANTE) */
-.input-text:focus {
+.custom-input:focus {
+    background: rgba(255,255,255,.05);
+    color: #fff;
     outline: none;
     border-color: var(--amarillo);
+    box-shadow: 0 0 0 0.25rem rgba(255, 204, 0, 0.25);
 }
 
-/* FIELDSET */
-fieldset {
-    border: 1px solid var(--gris-borde);
-    padding: 2rem;
-    border-radius: var(--radio);
-    background: rgba(255,255,255,.05);
-}
-
-/* LEGEND */
-legend {
-    text-align: center;
-    font-size: 1.4rem;
-    color: var(--amarillo);
-    margin-bottom: 2rem;
-}
-
-/* =========================================================
-TÉRMINOS
-========================================================= */
-.terminos {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.terminos label {
-    font-size: 1.3rem;
+.custom-input::placeholder {
     color: rgba(255,255,255,.4);
-}
-
-/* =========================================================
-IMAGEN
-========================================================= */
-.foto-seccion {
-    display: flex;
-    justify-content: center;
-    padding: 4rem;
-}
-
-.foto-seccion img {
-    max-width: 30rem;
-    border-radius: 1rem;
-    box-shadow: var(--sombra);
-}
-
-/* =========================================================
-DIVISOR
-   ========================================================= */
-.divisor {
-    height: 1px;
-    margin: 0 4rem;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,.07), transparent);
-}
-/* =========================================================
-FOOTER
-========================================================= */
-footer {
-    text-align: center;
-    padding: 3rem;
-    font-size: 1.3rem;
-    color: rgba(255,255,255,.3);
-}
-
-footer span {
-    color: var(--amarillo);
-}
-
-/* =========================================================
-RESPONSIVE
-========================================================= */
-@media (min-width: 768px) {
-
-
-    #Misservicios .contenedor{
-        grid-template-columns: repeat(3,1fr);
-    }
-    .navegacion_p {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 1.2rem;
-        border-bottom: 1px solid rgba(255,255,255,.1);
-        border-radius: 0;
-    }
 }
